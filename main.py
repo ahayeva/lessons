@@ -1,25 +1,32 @@
-import json
-def helloWorld():    print("Hello world!")
-def filterLetter(letter, data):
-    filtered_arr = []
-    for i in data:
-        title = i["title"]
-        if title[0].upper() == letter:
-            filtered_arr.append(i)
-    return filtered_arr
+#def factorial(number):
+     ##result = 1
+     ##while number > 1:
+        # result *= number
+       #  number -= 1
+    # return result
 
+
+
+    def isPolindrom(word):
+        reverse_word == word[::-1]
+        if reverse_word == word:
+            return True
+        else:
+            return False
 if __name__ == "__main__":
-    with open("products.json", "r", encoding="utf-8") as file:
-        products = json.load(file)
-    print(filterLetter("F", products))
-    print(filterLetter("K", products))
-    print(filterLetter("A", products))
+    value = input("введіть слово(polidrom): ")
+    print(isPolindrom(value))
 
 
-         # # i  - інтератор
 
 
-         # new_arr = []         # for i in products:
-         #     if len(i['title'])  != 0:         #         new_arr.append(i)
-         #         # with open("products.json", "w", encoding="utf-8") as f:
-         #    json.dump(new_arr, f)
+
+
+
+
+   ## num = int(input("введіть число"))
+    #test = factorial(num)
+   # print(test)
+
+
+
