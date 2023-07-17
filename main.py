@@ -1,32 +1,22 @@
-#def factorial(number):
-     ##result = 1
-     ##while number > 1:
-        # result *= number
-       #  number -= 1
-    # return result
-
-
-
-    def isPolindrom(word):
-        reverse_word == word[::-1]
-        if reverse_word == word:
-            return True
-        else:
-            return False
+import json
+def CesarCode(txt,key= 3):
+    with open("products(1).json","r") as file:
+        product_data = json.load(file)
+        code_in_number = []
+        for letter in txt:
+            for l in product_data:
+                if product_data[f"{l}"] == letter.lower():
+                    code_in_number.append(int(l)+int(key))
+                    print(code_in_number)
+                    code_word= ''
+                    for num in code_in_number:
+                        if num <= 26:
+                         code_word += product_data[f"{num}"]
+                    else:
+                        code_word +=product_data[f"{num - 26}"]
+                        return code_word.capitalize()
 if __name__ == "__main__":
-    value = input("введіть слово(polidrom): ")
-    print(isPolindrom(value))
-
-
-
-
-
-
-
-
-   ## num = int(input("введіть число"))
-    #test = factorial(num)
-   # print(test)
-
+   enter_txt ="python"
+   print(enter_txt)
 
 
