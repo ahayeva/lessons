@@ -1,22 +1,40 @@
 import json
-def CesarCode(txt,key= 3):
-    with open("products(1).json","r") as file:
-        product_data = json.load(file)
-        code_in_number = []
-        for letter in txt:
-            for l in product_data:
-                if product_data[f"{l}"] == letter.lower():
-                    code_in_number.append(int(l)+int(key))
-                    print(code_in_number)
-                    code_word= ''
-                    for num in code_in_number:
-                        if num <= 26:
-                         code_word += product_data[f"{num}"]
-                    else:
-                        code_word +=product_data[f"{num - 26}"]
-                        return code_word.capitalize()
+def add_money():
+    # add money to acc
+    user_id = int(input(":vvedit id korustuvacha: "))
+    count = int(input("vvedit kilkist koshtiv"))
+    #money = int(input("vvedit kilkist kodshtiv dlya zniattia"))
+    for user in users:
+        if user_id == user["id"]:
+            user["balance"] += count
+    print(users)
+    #if money >= users["balance"]:
+def withdraw_money():
+    money = int(input("vvedit kilkist kodshtiv dlya zniattia"))
+    for user in users:
+        if money >= user["balance"]:
+            print("nedostatnio kostiv")
+        elif money <= user["balance"]:
+            user["balance"] -= money
+            print("operacia uspishna")
+    print(user)
+def transfer_money():
+    trans = int(input("vvedit sumu dlia perekazu"))
+    user_id = int(input(vvedit id korustuvacha  ))
+    for user in users:
+
 if __name__ == "__main__":
-   enter_txt ="python"
-   print(enter_txt)
+    with open("users.json","r", encoding="utf-8") as file:
+        users = json.load(file)
+        users = users['accounts']
+        # print(users)
+
+    add_money()
+    withdraw_money()
+
+
+
+
+
 
 
